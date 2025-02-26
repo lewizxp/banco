@@ -1,12 +1,12 @@
 package domain.model;
 
-public class conta {
-      
-    public  double saldo;
+import Pessoa;
+
+public class Conta {
+
+    public double saldo;
     public String numero;
-    public Agencia  agencia;
-    public person pessoa;
-
-
-
+    public Agencia agencia;
+    public Pessoa pessoa;
 }
+
