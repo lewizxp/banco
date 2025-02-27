@@ -1,21 +1,32 @@
 package domain.model;
 
 public class Pessoa {
-
     private String nome;
     private String cpf;
-    public String cnpj;
+    private String cnpj;
     private String dataNasc;
-    private String tel;
     private String email;
+    private String tel;
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public Pessoa(String nome, String email, String tel) throws Exception {
+        this.setNome(nome); // this.nome = nome
+        this.setEmail(email); // this.email = email
+        this.setTel(tel); // this.tel = tel
+    }
+
+    public Pessoa(String nome, String cpf) throws Exception {
+        this.setNome(nome);
+        this.setCpf(cpf);
+    }
+
+    public void setNome(String nome) throws Exception {
+        if (nome.trim().equals(""))
+            throw new Exception("Nome embranco!");
+        this.nome = nome.trim();
     }
 
     public String getNome() {
         return this.nome;
-
     }
 
     public void setCpf(String cpf) {
@@ -26,36 +37,36 @@ public class Pessoa {
         return this.cpf;
     }
 
+    public String getCnpj() {
+        return cnpj;
+    }
+
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
 
-    public String getCnpj() {
-        return this.cnpj;
+    public String getDataNasc() {
+        return dataNasc;
     }
 
     public void setDataNasc(String dataNasc) {
         this.dataNasc = dataNasc;
     }
 
-    public String getDataNasc() {
-        return this.dataNasc;
-    }
-
-    public void setTel(String tel) {
-        this.tel = tel;
-    }
-
-    public String getTel() {
-        return this.tel;
+    public String getEmail() {
+        return this.email;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getEmail() {
-        return this.email;
+    public String getTel() {
+        return this.tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
     }
 
 }
